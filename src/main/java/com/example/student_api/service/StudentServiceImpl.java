@@ -63,12 +63,14 @@ public class StudentServiceImpl implements StudentService {
     public Student toEntity(StudentDto dto) {
         Student student = new Student();
         student.setName(dto.getName());
+        student.setName(dto.getName());
         student.setAge(dto.getAge());
         student.setEmail(dto.getEmail());
         return student;
     }
     public StudentDto toDto(Student student){
         StudentDto studentDto = new StudentDto();
+        studentDto.setId(student.getId());
         studentDto.setName(student.getName());
         studentDto.setAge(student.getAge());
         studentDto.setEmail(student.getEmail());

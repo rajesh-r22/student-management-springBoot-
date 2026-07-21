@@ -27,7 +27,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto getStudentById(Long id) {
         Student student = studentRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("Student with this Id not found "+id));
+                .orElseThrow(()-> new ResourceNotFoundException("Student with  Id  "+ id+" not found "));
         return toDto(student);
     }
 
@@ -42,7 +42,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto updateStudentById(Long id, StudentDto studentDto) {
         Student existing = studentRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("Student with this Id not found "+ id));
+                .orElseThrow(()-> new ResourceNotFoundException("Student with  Id  "+ id+" not found "));
         existing.setName(studentDto.getName());
         existing.setAge(studentDto.getAge());
         existing.setEmail(studentDto.getEmail());
@@ -53,7 +53,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void deleteStudentById(Long id){
         if(!studentRepository.existsById(id)){
-            throw new ResourceNotFoundException("Student with this Id not found "+ id);
+            throw new ResourceNotFoundException("Student with  Id  "+ id+" not found ");
         }
         studentRepository.deleteById(id);
     }

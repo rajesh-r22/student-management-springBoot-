@@ -10,7 +10,7 @@ import java.util.Map;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-    @ExceptionHandler(value = Exception.class)
+    @ExceptionHandler(value = ResourceNotFoundException.class)
     public ResponseEntity<Map<String,String>> handleNotFound(ResourceNotFoundException ex){
         Map<String,String> error = new HashMap<>();
         error.put("message", ex.getMessage());

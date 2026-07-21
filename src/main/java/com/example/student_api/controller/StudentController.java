@@ -1,7 +1,6 @@
 package com.example.student_api.controller;
 
 import com.example.student_api.dto.StudentDto;
-import com.example.student_api.entity.Student;
 import com.example.student_api.service.StudentService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

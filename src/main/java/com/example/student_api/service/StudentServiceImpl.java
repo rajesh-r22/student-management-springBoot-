@@ -19,6 +19,10 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public StudentDto createStudent(StudentDto studentDto) {
+
+        if(studentDto.getAge()<18){
+            throw new ResourceNotFoundException("Student not found with age > 18");
+        }
         Student student= toEntity(studentDto);
         Student savedStudent = studentRepository.save(student);
         return toDto(savedStudent);

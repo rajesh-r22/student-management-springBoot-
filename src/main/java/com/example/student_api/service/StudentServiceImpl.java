@@ -2,6 +2,7 @@ package com.example.student_api.service;
 
 import com.example.student_api.dto.StudentDto;
 import com.example.student_api.entity.Student;
+import com.example.student_api.exception.InvalidRequestException;
 import com.example.student_api.exception.ResourceNotFoundException;
 import com.example.student_api.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,8 +22,9 @@ public class StudentServiceImpl implements StudentService {
     public StudentDto createStudent(StudentDto studentDto) {
 
         if(studentDto.getAge()<18){
-            throw new ResourceNotFoundException("Student not found with age > 18");
+            throw new InvalidRequestException("Student age is < 18 ! access denied");
         }
+
         Student student= toEntity(studentDto);
         Student savedStudent = studentRepository.save(student);
         return toDto(savedStudent);

@@ -2,6 +2,7 @@ package com.example.student_api.service;
 
 import com.example.student_api.dto.StudentDto;
 import com.example.student_api.entity.Student;
+import com.example.student_api.exception.DuplicateResourceException;
 import com.example.student_api.exception.InvalidRequestException;
 import com.example.student_api.exception.ResourceNotFoundException;
 import com.example.student_api.repository.StudentRepository;
@@ -21,8 +22,14 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto createStudent(StudentDto studentDto) {
 
+        // business rule #1: age restriction
         if(studentDto.getAge()<18){
             throw new InvalidRequestException("Student age is < 18 ! access denied");
+        }
+
+        // business rule #2: no duplicate emails — delegated to repository, not looped in Java
+        if(studentRepository.existsByEmail(studentDto.getEmail())){
+            throw new DuplicateResourceException("Student email already registered "+studentDto.getEmail());
         }
 
         Student student= toEntity(studentDto);

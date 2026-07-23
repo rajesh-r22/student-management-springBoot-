@@ -16,4 +16,18 @@ public class GlobalExceptionHandler {
         error.put("message", ex.getMessage());
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(value = InvalidRequestException.class)
+    public ResponseEntity<Map<String,String>> handleBadRequest(InvalidRequestException ex){
+        Map<String,String> error = new HashMap<>();
+        error.put("message", ex.getMessage());
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(value = DuplicateResourceException.class)
+    public ResponseEntity<Map<String,String>> handleDuplicate(Exception ex){
+        Map<String,String> error = new HashMap<>();
+        error.put("message", ex.getMessage());
+        return new ResponseEntity<>(error, HttpStatus.CONFLICT);
+    }
 }

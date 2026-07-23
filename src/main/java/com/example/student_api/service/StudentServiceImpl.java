@@ -75,7 +75,7 @@ public class StudentServiceImpl implements StudentService {
 //  mapping helpers that helps us to convert dto to entity and entity to Dto
     public Student toEntity(StudentDto dto) {
         Student student = new Student();
-        student.setName(dto.getName());
+
         student.setName(dto.getName());
         student.setAge(dto.getAge());
         student.setEmail(dto.getEmail());

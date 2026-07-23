@@ -7,5 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
     // JpaRepository already gives us save(), findById(), findAll(), deleteById()
-    // No code needed yet — Spring Data JPA generates the implementation at runtime
+
+    // Spring Data JPA auto-generates: SELECT EXISTS(... WHERE email = ?)
+    boolean existsByEmail(String email);
+
 }

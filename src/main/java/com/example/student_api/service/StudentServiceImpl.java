@@ -22,6 +22,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto createStudent(StudentDto studentDto) {
 
+// Business validation — lives in the Service, because it needs DB access + domain knowledge
         // business rule #1: age restriction
         if(studentDto.getAge()<18){
             throw new InvalidRequestException("Student age is < 18 ! access denied");

@@ -7,9 +7,13 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
+
+
     @ExceptionHandler(value = ResourceNotFoundException.class)
     public ResponseEntity<Map<String,String>> handleNotFound(ResourceNotFoundException ex){
         Map<String,String> error = new HashMap<>();

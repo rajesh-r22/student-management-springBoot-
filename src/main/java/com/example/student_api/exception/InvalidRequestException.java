@@ -1,6 +1,6 @@
 package com.example.student_api.exception;
 
-public class InvalidRequestException extends RuntimeException {
+public class InvalidRequestException extends ApplicationException {
     public InvalidRequestException(String message) {
         super(message);
     }

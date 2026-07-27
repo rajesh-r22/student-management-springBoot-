@@ -1,16 +1,15 @@
 package com.example.student_api.dto;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import com.example.student_api.validation.ValidRollNumber;
+import com.example.student_api.validation.ValidationGroup;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
 @Data
 public class StudentDto {
+    @Null(groups = ValidationGroup.onCreate.class,message = "Id must not be provided on create")
+    @NotNull(groups = ValidationGroup.onUpdate.class , message = "Id is required for update")
     private Long id;
 
     @NotNull(message = "Name is required")
@@ -23,4 +22,11 @@ public class StudentDto {
 
     @Min(value = 1, message = "Age must be positive")
     private Integer age;
+
+    @ValidRollNumber   // <-- our custom validator
+    private String rollNumber;
+
+    @NotNull(message = "Address is required")
+    @Valid              // <-- CRITICAL: without @Valid here, AddressDTO's own constraints are silently skipped
+    private AddressDto address;
 }

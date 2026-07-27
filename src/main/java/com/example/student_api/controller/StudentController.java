@@ -2,10 +2,12 @@ package com.example.student_api.controller;
 
 import com.example.student_api.dto.StudentDto;
 import com.example.student_api.service.StudentService;
+import com.example.student_api.validation.ValidationGroup;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,7 +22,8 @@ public class StudentController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<StudentDto> addStudent(@Valid @RequestBody StudentDto studentDto) {
+    public ResponseEntity<StudentDto> addStudent(
+            @Validated(ValidationGroup.onCreate.class) @RequestBody StudentDto studentDto) {
         StudentDto created= studentService.createStudent(studentDto);
         return  new ResponseEntity<>(created, HttpStatus.CREATED);
     }
@@ -38,7 +41,8 @@ public class StudentController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<StudentDto> updateStudentById(@PathVariable Long id, @RequestBody StudentDto studentDto) {
+    public ResponseEntity<StudentDto> updateStudentById(
+             @PathVariable Long id,@Validated(ValidationGroup.onUpdate.class) @RequestBody StudentDto studentDto) {
         StudentDto updated= studentService.updateStudentById(id, studentDto);
         return  ResponseEntity.ok(updated);
     }

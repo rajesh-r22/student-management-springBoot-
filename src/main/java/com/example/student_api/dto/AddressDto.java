@@ -2,7 +2,9 @@ package com.example.student_api.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import lombok.Data;
 
+@Data
 public class AddressDto {
     @NotBlank(message = "City cannot be blank")
     private String city;

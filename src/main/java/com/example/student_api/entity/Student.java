@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "students")
 @Data
@@ -22,5 +25,13 @@ public class Student {
     private String email;
 
     private Integer age;
+
+    private String passwordHash;
+
+    @Column(name="created_At")
+    private LocalDateTime createdAt;
+
+    @Column(name="created_By")
+    private String createdBy;
 
 }

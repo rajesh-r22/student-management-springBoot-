@@ -5,6 +5,7 @@ import com.example.student_api.entity.Student;
 import com.example.student_api.exception.DuplicateResourceException;
 import com.example.student_api.exception.InvalidRequestException;
 import com.example.student_api.exception.ResourceNotFoundException;
+import com.example.student_api.mapper.StudentMapper;
 import com.example.student_api.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor   // Lombok generates constructor for final fields -> constructor injection
 public class StudentServiceImpl implements StudentService {
 
+    private final StudentMapper studentMapper;
     private final StudentRepository studentRepository;
 
     @Override
@@ -33,23 +35,24 @@ public class StudentServiceImpl implements StudentService {
             throw new DuplicateResourceException("Student email already registered "+studentDto.getEmail());
         }
 
-        Student student= toEntity(studentDto);
+        Student student = studentMapper.toEntity(studentDto);
         Student savedStudent = studentRepository.save(student);
-        return toDto(savedStudent);
+        return studentMapper.toDTO(savedStudent);
+
     }
 
     @Override
     public StudentDto getStudentById(Long id) {
         Student student = studentRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("Student with  Id  "+ id+" not found "));
-        return toDto(student);
+                .orElseThrow(() -> new ResourceNotFoundException("Student not found with id "+id));
+        return studentMapper.toDTO(student);
     }
 
     @Override
     public List<StudentDto> getAllStudents(){
          return studentRepository.findAll()
                  .stream()
-                 .map(this::toDto)
+                 .map(studentMapper::toDTO)
                  .collect(Collectors.toList());
     }
 
@@ -61,7 +64,7 @@ public class StudentServiceImpl implements StudentService {
         existing.setAge(studentDto.getAge());
         existing.setEmail(studentDto.getEmail());
         studentRepository.save(existing);
-        return toDto(existing);
+        return studentMapper.toDTO(existing);
     }
 
     @Override
@@ -74,22 +77,22 @@ public class StudentServiceImpl implements StudentService {
 
 
 //  mapping helpers that helps us to convert dto to entity and entity to Dto
-    public Student toEntity(StudentDto dto) {
-        Student student = new Student();
-
-        student.setName(dto.getName());
-        student.setAge(dto.getAge());
-        student.setEmail(dto.getEmail());
-        return student;
-    }
-    public StudentDto toDto(Student student){
-        StudentDto studentDto = new StudentDto();
-        studentDto.setId(student.getId());
-        studentDto.setName(student.getName());
-        studentDto.setAge(student.getAge());
-        studentDto.setEmail(student.getEmail());
-        return studentDto;
-    }
+//    public Student toEntity(StudentDto dto) {
+//        Student student = new Student();
+//
+//        student.setName(dto.getName());
+//        student.setAge(dto.getAge());
+//        student.setEmail(dto.getEmail());
+//        return student;
+//    }
+//    public StudentDto toDto(Student student){
+//        StudentDto studentDto = new StudentDto();
+//        studentDto.setId(student.getId());
+//        studentDto.setName(student.getName());
+//        studentDto.setAge(student.getAge());
+//        studentDto.setEmail(student.getEmail());
+//        return studentDto;
+//    }
 
 
 }

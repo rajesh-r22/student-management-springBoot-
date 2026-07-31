@@ -1,12 +1,10 @@
 package com.example.student_api.entity;
 
-import com.example.student_api.dto.AddressDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity

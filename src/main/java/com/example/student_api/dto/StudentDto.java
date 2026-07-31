@@ -2,7 +2,6 @@ package com.example.student_api.dto;
 
 import com.example.student_api.validation.ValidRollNumber;
 import com.example.student_api.validation.ValidationGroup;
-import jakarta.persistence.Column;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.Data;

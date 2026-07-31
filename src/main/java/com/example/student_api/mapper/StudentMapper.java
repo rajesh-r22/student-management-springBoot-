@@ -16,4 +16,5 @@ public interface StudentMapper {
     @Mapping(target = "createdBy", ignore = true)
     @Mapping(target = "id", ignore = true)              // id is DB-generated, never set from incoming DTO on create
     Student toEntity(StudentDto dto);
+
 }

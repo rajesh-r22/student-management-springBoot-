@@ -6,6 +6,7 @@ import lombok.Data;
 
 @Data
 public class AddressDto {
+
     @NotBlank(message = "City cannot be blank")
     private String city;
 

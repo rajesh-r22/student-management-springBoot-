@@ -1,5 +1,6 @@
 package com.example.student_api.controller;
 
+import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
 import com.example.student_api.service.StudentService;
 import com.example.student_api.validation.ValidationGroup;
@@ -35,10 +36,15 @@ public class StudentController {
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<StudentDto>> getAllStudents(){
-        List<StudentDto> studentDtos = studentService.getAllStudents();
-        return  ResponseEntity.ok(studentDtos);
+    public ResponseEntity<PagedResponse<StudentDto>> getAllStudents(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "id") String sortBy,
+            @RequestParam(defaultValue = "asc") String direction) {
+
+        return ResponseEntity.ok(studentService.getAllStudents(page, size, sortBy, direction));
     }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<StudentDto> updateStudentById(

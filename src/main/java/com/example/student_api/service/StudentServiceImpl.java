@@ -1,5 +1,6 @@
 package com.example.student_api.service;
 
+import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
 import com.example.student_api.entity.Student;
 import com.example.student_api.exception.DuplicateResourceException;
@@ -8,9 +9,14 @@ import com.example.student_api.exception.ResourceNotFoundException;
 import com.example.student_api.mapper.StudentMapper;
 import com.example.student_api.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -49,11 +55,30 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<StudentDto> getAllStudents(){
-         return studentRepository.findAll()
-                 .stream()
-                 .map(studentMapper::toDTO)
-                 .collect(Collectors.toList());
+    public PagedResponse<StudentDto> getAllStudents(int page, int size , String sortBy, String direction){
+//    Whitelist allowed sort fields
+        Set<String> allowedSortFields = Set.of("id","name","email","age");
+        if(!allowedSortFields.contains(sortBy)){
+            throw new InvalidRequestException("Sort fields are not allowed "+sortBy);
+        }
+        Sort.Direction sortDirection = direction.equalsIgnoreCase("desc")
+                ? Sort.Direction.DESC
+                : Sort.Direction.ASC;
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sortDirection, sortBy));
+
+        Page<Student> studentPage = studentRepository.findAll(pageable);
+
+        List<StudentDto> content= studentPage.getContent()
+                .stream()
+                .map(studentMapper::toDTO)
+                .collect(Collectors.toList());
+        return new PagedResponse<>(
+                content,
+                studentPage.getNumber(),
+                studentPage.getSize(),
+                studentPage.getTotalPages(),
+                studentPage.isLast()
+        );
     }
 
     @Override

@@ -18,8 +18,32 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     // 1. Partial, case-insensitive name search
     List<Student> findByNameContainingIgnoreCase(String name);
 
+
+    // 2. Age greater than a threshold
+    List<Student> findByAgeGreaterThan(Integer age);
+
+    // 3. Age range + sorting — method name gets long, but still derivable
+    List<Student> findByAgeBetweenOrderByNameAsc(Integer minAge, Integer maxAge);
+
+    // 4. Combine two conditions with AND
+    List<Student> findByNameContainingIgnoreCaseAndAgeGreaterThan(String name, Integer age);
+
+//    -------------------------------------------------------------------------------------------------------------------------
+
+    // JPQL: operates on ENTITY names and FIELD names, not table/column names
+    @Query("SELECT s FROM Student s WHERE s.email LIKE %:domain%")
+    List<Student> findByEmailDomain(@Param("domain") String domain);
+
     // JPQL with multiple conditions — more readable than a long derived method name
     @Query("SELECT s FROM Student s WHERE s.age BETWEEN :minAge AND :maxAge ORDER BY s.name")
-    List<Student> findStudentsInAgeRange(@Param("minAge")Integer minAge, @Param("maxAge")Integer maxAge);
+    List<Student> findStudentsInAgeRange(@Param("minAge") Integer minAge, @Param("maxAge") Integer maxAge);
+
+    // JPQL aggregate query
+    @Query("SELECT COUNT(s) FROM Student s WHERE s.age >= :adultAge")
+    long countAdultStudents(@Param("adultAge") Integer adultAge);
+
+    // JPQL projection — return only specific fields, not the whole entity
+    @Query("SELECT s.name FROM Student s WHERE s.age > :age")
+    List<String> findNamesOfStudentsOlderThan(@Param("age") Integer age);
 
 }

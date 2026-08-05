@@ -2,6 +2,7 @@ package com.example.student_api.service;
 
 import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -13,4 +14,5 @@ public interface StudentService {
     StudentDto updateStudentById(Long id, StudentDto studentDto);
     void deleteStudentById(Long id);
     List<StudentDto> getStudentByName(String name);
+    List<StudentDto> getStudentInAgeRange(@Param("minAge") Integer minAge, @Param("maxAge") Integer maxAge);
 }

@@ -108,6 +108,16 @@ public class StudentServiceImpl implements StudentService {
                 .collect(Collectors.toList());
     }
 
+    public List<StudentDto> getStudentInAgeRange(Integer minAge, Integer maxAge){
+        if (minAge>maxAge){
+            throw new IllegalArgumentException("minAge cannot be greater than maxAge "+maxAge);
+        }
+        return studentRepository.findStudentsInAgeRange(minAge,maxAge)
+                .stream()
+                .map(studentMapper::toDTO)
+                .collect(Collectors.toList());
+    }
+
 
 
 

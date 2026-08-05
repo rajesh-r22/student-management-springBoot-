@@ -10,7 +10,7 @@ public interface StudentService {
     StudentDto createStudent(StudentDto studentDto);
     StudentDto getStudentById(Long id);
     PagedResponse<StudentDto> getAllStudents(int page, int size, String sortBy, String direction);
-
     StudentDto updateStudentById(Long id, StudentDto studentDto);
     void deleteStudentById(Long id);
+    List<StudentDto> getStudentByName(String name);
 }

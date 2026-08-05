@@ -49,6 +49,11 @@ public class StudentController {
         return ResponseEntity.ok(studentService.getStudentByName(name));
     }
 
+    @GetMapping("/age-range")
+    public ResponseEntity<List<StudentDto>> getStudentInAgeRange(@RequestParam Integer minAge, @RequestParam Integer maxAge){
+        return ResponseEntity.ok(studentService.getStudentInAgeRange(minAge, maxAge));
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<StudentDto> updateStudentById(
              @PathVariable Long id,@Validated(ValidationGroup.onUpdate.class) @RequestBody StudentDto studentDto) {

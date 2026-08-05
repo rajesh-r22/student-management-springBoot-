@@ -44,8 +44,10 @@ public class StudentController {
 
         return ResponseEntity.ok(studentService.getAllStudents(page, size, sortBy, direction));
     }
-
-
+    @GetMapping("/search")
+    public ResponseEntity<List<StudentDto>> getStudentByName(@RequestParam String name) {
+        return ResponseEntity.ok(studentService.getStudentByName(name));
+    }
 
     @PutMapping("/{id}")
     public ResponseEntity<StudentDto> updateStudentById(

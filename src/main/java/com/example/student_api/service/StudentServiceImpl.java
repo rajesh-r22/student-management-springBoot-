@@ -100,12 +100,14 @@ public class StudentServiceImpl implements StudentService {
         studentRepository.deleteById(id);
     }
 
-    public List<StudentDto> getStudentsByName(String name){
+    @Override
+    public List<StudentDto> getStudentByName(String name) {
         return studentRepository.findByNameContainingIgnoreCase(name)
                 .stream()
                 .map(studentMapper::toDTO)
                 .collect(Collectors.toList());
     }
+
 
 
 

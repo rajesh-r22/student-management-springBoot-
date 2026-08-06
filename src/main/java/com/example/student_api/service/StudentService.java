@@ -14,5 +14,5 @@ public interface StudentService {
     StudentDto updateStudentById(Long id, StudentDto studentDto);
     void deleteStudentById(Long id);
     List<StudentDto> getStudentByName(String name);
-    List<StudentDto> getStudentInAgeRange(@Param("minAge") Integer minAge, @Param("maxAge") Integer maxAge);
+    List<StudentDto> getStudentInAgeRange( Integer minAge,  Integer maxAge);
 }

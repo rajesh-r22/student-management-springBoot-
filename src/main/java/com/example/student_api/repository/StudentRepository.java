@@ -46,4 +46,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     @Query("SELECT s.name FROM Student s WHERE s.age > :age")
     List<String> findNamesOfStudentsOlderThan(@Param("age") Integer age);
 
+//    ----NATIVE QUERY--
+
 }

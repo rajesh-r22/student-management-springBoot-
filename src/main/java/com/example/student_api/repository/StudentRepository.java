@@ -1,5 +1,6 @@
 package com.example.student_api.repository;
 
+import com.example.student_api.dto.StudentRankProjection;
 import com.example.student_api.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -47,6 +48,11 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     List<String> findNamesOfStudentsOlderThan(@Param("age") Integer age);
 
 //    ----NATIVE QUERY--
-
+    @Query(value = """
+            SELECT s.id AS id, s.name AS name, s.age AS age,
+            RANK() OVER (ORDER BY s.age DESC) AS age_rank
+            FROM students s
+    """, nativeQuery = true)
+    List<StudentRankProjection> findStudentByAge();
 
 }

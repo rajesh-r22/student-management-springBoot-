@@ -140,6 +140,13 @@ public class StudentServiceImpl implements StudentService {
         return studentMapper.toDTO(updated);
     }
 
+    @Override
+    public List<StudentDto> getStudentsWithEmailNotificationsOn(){
+        return studentRepository.findStudentWithEmailNotificationsOn()
+                .stream()
+                .map(studentMapper::toDTO)
+                .collect(Collectors.toList());
+    }
 
 
 

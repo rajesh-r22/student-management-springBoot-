@@ -3,7 +3,6 @@ package com.example.student_api.controller;
 import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
 import com.example.student_api.dto.StudentRankDto;
-import com.example.student_api.entity.Student;
 import com.example.student_api.service.StudentService;
 import com.example.student_api.validation.ValidationGroup;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,6 +77,11 @@ public class StudentController {
     public ResponseEntity<StudentDto> incrementAge(@PathVariable Long id){
         StudentDto updated=studentService.IncrementAge(id);
         return  ResponseEntity.ok(updated);
+    }
+
+    @GetMapping("/emailNotification")
+    public ResponseEntity<List<StudentDto>> getStudentsWithEmailNotificationsOn(){
+        return ResponseEntity.ok(studentService.getStudentsWithEmailNotificationsOn());
     }
 
 }

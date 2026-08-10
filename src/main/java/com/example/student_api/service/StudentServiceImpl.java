@@ -121,6 +121,14 @@ public class StudentServiceImpl implements StudentService {
                 .collect(Collectors.toList());
     }
 
+    public List<StudentRankDto> getStudentsByAgeRank(){
+        return studentRepository.findStudentsRankedBYAge()
+                .stream()
+                .map(p-> new StudentRankDto(p.getId(),p.getName(),p.getAge(),p.getRank()))
+                .collect(Collectors.toList());
+    }
+
+
 
 
 

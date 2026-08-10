@@ -16,5 +16,5 @@ public interface StudentService {
     void deleteStudentById(Long id);
     List<StudentDto> getStudentByName(String name);
     List<StudentDto> getStudentInAgeRange( Integer minAge,  Integer maxAge);
-
+    List<StudentRankDto> getStudentsByAgeRank();
 }

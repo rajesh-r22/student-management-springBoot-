@@ -2,6 +2,8 @@ package com.example.student_api.service;
 
 import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
+import com.example.student_api.dto.StudentRankDto;
+import com.example.student_api.dto.StudentRankProjection;
 import com.example.student_api.entity.Student;
 import com.example.student_api.exception.DuplicateResourceException;
 import com.example.student_api.exception.InvalidRequestException;
@@ -118,6 +120,7 @@ public class StudentServiceImpl implements StudentService {
                 .map(studentMapper::toDTO)
                 .collect(Collectors.toList());
     }
+
 
 
 

@@ -2,6 +2,8 @@ package com.example.student_api.controller;
 
 import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
+import com.example.student_api.dto.StudentRankDto;
+import com.example.student_api.entity.Student;
 import com.example.student_api.service.StudentService;
 import com.example.student_api.validation.ValidationGroup;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,6 +67,17 @@ public class StudentController {
     public ResponseEntity<Void> deleteStudentById(@PathVariable Long id){
         studentService.deleteStudentById(id);
         return  ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/rankByAge")
+    public ResponseEntity<List<StudentRankDto>> getStudentsRankByAge(){
+        return ResponseEntity.ok(studentService.getStudentsByAgeRank());
+    }
+
+    @PutMapping("/{id}/incrementAge")
+    public ResponseEntity<StudentDto> incrementAge(@PathVariable Long id){
+        StudentDto updated=studentService.IncrementAge(id);
+        return  ResponseEntity.ok(updated);
     }
 
 }

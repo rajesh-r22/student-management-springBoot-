@@ -64,4 +64,10 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     """, nativeQuery = true)
     Student incrementAgeAndReturn(@Param("id") Long id);
 
+    @Query(value = """
+    SELECT * FROM students
+    WHERE preferences ->> 'notifyByEmail'='true' 
+        """ , nativeQuery = true)
+    List<Student> findStudentWithEmailNotificationsOn();
+
 }

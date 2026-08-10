@@ -34,4 +34,6 @@ public class Student {
     @Column(name="created_By")
     private String createdBy;
 
+    @Column(columnDefinition = "jsonb")
+    private String preferences; // stored as JSON string, PostgreSQL validates/indexes it as JSONB
 }

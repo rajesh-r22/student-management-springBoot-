@@ -2,7 +2,6 @@ package com.example.student_api.service;
 
 import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 

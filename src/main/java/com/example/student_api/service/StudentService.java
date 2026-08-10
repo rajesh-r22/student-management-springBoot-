@@ -17,4 +17,6 @@ public interface StudentService {
     List<StudentDto> getStudentByName(String name);
     List<StudentDto> getStudentInAgeRange( Integer minAge,  Integer maxAge);
     List<StudentRankDto> getStudentsByAgeRank();
+    StudentDto IncrementAge(Long id);
+
 }

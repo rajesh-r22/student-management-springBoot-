@@ -16,6 +16,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Set;
@@ -121,11 +122,22 @@ public class StudentServiceImpl implements StudentService {
                 .collect(Collectors.toList());
     }
 
+    @Override
     public List<StudentRankDto> getStudentsByAgeRank(){
         return studentRepository.findStudentsRankedBYAge()
                 .stream()
                 .map(p-> new StudentRankDto(p.getId(),p.getName(),p.getAge(),p.getRank()))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional
+    public StudentDto IncrementAge(Long id){
+        Student updated=studentRepository.incrementAgeAndReturn(id);
+        if(updated==null){
+            throw new ResourceNotFoundException("Student with  Id  "+ id+" not found ");
+        }
+        return studentMapper.toDTO(updated);
     }
 
 

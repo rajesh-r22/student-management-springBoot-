@@ -54,7 +54,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
             RANK() OVER (ORDER BY s.age DESC) AS age_rank
             FROM students s
     """, nativeQuery = true)
-    List<StudentRankProjection> findStudentByAge();
+    List<StudentRankProjection> findStudentsRankedBYAge();
 
     @Modifying
     @Query(value = """

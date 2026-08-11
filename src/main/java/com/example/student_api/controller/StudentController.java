@@ -75,8 +75,7 @@ public class StudentController {
 
     @PutMapping("/{id}/incrementAge")
     public ResponseEntity<StudentDto> incrementAge(@PathVariable Long id){
-        StudentDto updated=studentService.IncrementAge(id);
-        return  ResponseEntity.ok(updated);
+         return ResponseEntity.ok(studentService.IncrementAge(id));
     }
 
     @GetMapping("/emailNotification")

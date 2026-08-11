@@ -3,7 +3,6 @@ package com.example.student_api.repository;
 import com.example.student_api.dto.StudentRankProjection;
 import com.example.student_api.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -56,7 +55,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     """, nativeQuery = true)
     List<StudentRankProjection> findStudentsRankedBYAge();
 
-    @Modifying
+
     @Query(value = """
     UPDATE students SET age = age + 1
     WHERE id = :id

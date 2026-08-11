@@ -1,9 +1,11 @@
 package com.example.student_api.entity;
 
+import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Type;
 
 import java.time.LocalDateTime;
 
@@ -35,5 +37,6 @@ public class Student {
     private String createdBy;
 
     @Column(columnDefinition = "jsonb")
+    @Type(JsonType.class)
     private String preferences; // stored as JSON string, PostgreSQL validates/indexes it as JSONB
 }

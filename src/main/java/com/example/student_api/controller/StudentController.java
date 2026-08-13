@@ -3,6 +3,8 @@ package com.example.student_api.controller;
 import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
 import com.example.student_api.dto.StudentRankDto;
+import com.example.student_api.entity.Student;
+import com.example.student_api.response.ApiResponse;
 import com.example.student_api.service.StudentService;
 import com.example.student_api.validation.ValidationGroup;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +25,12 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<StudentDto> addStudent(
-            @Validated(ValidationGroup.onCreate.class) @RequestBody StudentDto studentDto) {
-        StudentDto created= studentService.createStudent(studentDto);
-        return  new ResponseEntity<>(created, HttpStatus.CREATED);
+    @PutMapping
+    public ResponseEntity<ApiResponse<StudentDto>> createStudent(
+            @Validated(ValidationGroup.onCreate.class) @RequestBody StudentDto studentDto){
+        StudentDto created=studentService.createStudent(studentDto);
+        ApiResponse<StudentDto> response=ApiResponse.success("Student created successfully",created);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @GetMapping("/get/{id}")

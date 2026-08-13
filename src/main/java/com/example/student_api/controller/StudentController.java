@@ -34,9 +34,10 @@ public class StudentController {
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<StudentDto> getStudentById(@PathVariable Long id){
-        StudentDto studentDto = studentService.getStudentById(id);
-        return  ResponseEntity.ok(studentDto);
+    public ResponseEntity<ApiResponse<StudentDto>> getStudent(@PathVariable long id){
+        StudentDto studentDto= studentService.getStudentById(id);
+        ApiResponse<StudentDto> response=ApiResponse.success("Student fetched successfully",studentDto);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("/getAll")

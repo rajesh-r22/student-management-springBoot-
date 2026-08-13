@@ -41,35 +41,43 @@ public class StudentController {
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<PagedResponse<StudentDto>> getAllStudents(
+    public ResponseEntity<ApiResponse<PagedResponse<StudentDto>>> getAllStudents(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(defaultValue = "id") String sortBy,
             @RequestParam(defaultValue = "asc") String direction) {
 
-        return ResponseEntity.ok(studentService.getAllStudents(page, size, sortBy, direction));
+        PagedResponse<StudentDto> studentDto=studentService.getAllStudents(page,size,sortBy,direction);
+        ApiResponse<PagedResponse<StudentDto>> response=ApiResponse.success("Student fetched successfully",studentDto);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
     @GetMapping("/search")
-    public ResponseEntity<List<StudentDto>> getStudentByName(@RequestParam String name) {
-        return ResponseEntity.ok(studentService.getStudentByName(name));
+    public ResponseEntity<ApiResponse<List<StudentDto>>> getStudentByName(@RequestParam String name) {
+        List<StudentDto> studentDto=studentService.getStudentByName(name);
+        ApiResponse<List<StudentDto>> response=ApiResponse.success("Student fetched successfully by name",studentDto);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("/age-range")
-    public ResponseEntity<List<StudentDto>> getStudentInAgeRange(@RequestParam Integer minAge, @RequestParam Integer maxAge){
-        return ResponseEntity.ok(studentService.getStudentInAgeRange(minAge, maxAge));
+    public ResponseEntity<ApiResponse<List<StudentDto>>> getStudentInAgeRange(@RequestParam Integer minAge, @RequestParam Integer maxAge){
+        List<StudentDto> studentDto=studentService.getStudentInAgeRange(minAge,maxAge);
+        ApiResponse<List<StudentDto>> response= ApiResponse.success("Student fetched successfully by age",studentDto);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<StudentDto> updateStudentById(
+    public ResponseEntity<ApiResponse<StudentDto>> updateStudentById(
              @PathVariable Long id,@Validated(ValidationGroup.onUpdate.class) @RequestBody StudentDto studentDto) {
         StudentDto updated= studentService.updateStudentById(id, studentDto);
-        return  ResponseEntity.ok(updated);
+        ApiResponse<StudentDto> response=ApiResponse.success("Student updated successfully",updated);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteStudentById(@PathVariable Long id){
+    public ResponseEntity<ApiResponse<Void>> deleteStudentById(@PathVariable Long id){
         studentService.deleteStudentById(id);
-        return  ResponseEntity.noContent().build();
+        return   ResponseEntity.ok(ApiResponse.success("Student deleted successfully",null));
     }
 
     @GetMapping("/rankByAge")

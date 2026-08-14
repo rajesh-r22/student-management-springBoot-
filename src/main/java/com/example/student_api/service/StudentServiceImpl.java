@@ -28,6 +28,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor   // Lombok generates constructor for final fields -> constructor injection
 public class StudentServiceImpl implements StudentService {
 
+    // one logger per class, named after the class — the universal convention
     private static final Logger log=LoggerFactory.getLogger(StudentServiceImpl.class);
 
     private final StudentMapper studentMapper;

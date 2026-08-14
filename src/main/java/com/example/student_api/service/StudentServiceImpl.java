@@ -3,7 +3,6 @@ package com.example.student_api.service;
 import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
 import com.example.student_api.dto.StudentRankDto;
-import com.example.student_api.dto.StudentRankProjection;
 import com.example.student_api.entity.Student;
 import com.example.student_api.exception.DuplicateResourceException;
 import com.example.student_api.exception.InvalidRequestException;
@@ -11,6 +10,8 @@ import com.example.student_api.exception.ResourceNotFoundException;
 import com.example.student_api.mapper.StudentMapper;
 import com.example.student_api.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -26,6 +27,8 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor   // Lombok generates constructor for final fields -> constructor injection
 public class StudentServiceImpl implements StudentService {
+
+    private static final Logger log=LoggerFactory.getLogger(StudentServiceImpl.class);
 
     private final StudentMapper studentMapper;
     private final StudentRepository studentRepository;

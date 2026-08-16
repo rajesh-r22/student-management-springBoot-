@@ -37,6 +37,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto createStudent(StudentDto studentDto) {
 
+        log.info("Student Created Successfully : {}",  studentDto.getEmail());
         // Business validation — lives in the Service, because it needs DB access + domain knowledge
         // business rule #1: age restriction
         if(studentDto.getAge()<18){

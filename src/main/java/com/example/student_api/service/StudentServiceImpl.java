@@ -37,20 +37,24 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto createStudent(StudentDto studentDto) {
 
-        log.info("Student Created Successfully : {}",  studentDto.getEmail());
+        log.info("Creating student with email: {}",  studentDto.getEmail());
+
         // Business validation — lives in the Service, because it needs DB access + domain knowledge
         // business rule #1: age restriction
         if(studentDto.getAge()<18){
-            throw new InvalidRequestException("Student age is < 18 ! access denied");
+            log.warn("Student creation rejected - underage: age={}",studentDto.getAge());
+            throw new InvalidRequestException("Student access denied ! ,age  must be >= 18 ");
         }
 
         // business rule #2: no duplicate emails — delegated to repository, not looped in Java
         if(studentRepository.existsByEmail(studentDto.getEmail())){
+            log.warn("duplicate student - email already exists : email={}",studentDto.getEmail());
             throw new DuplicateResourceException("Student email already registered "+studentDto.getEmail());
         }
 
         Student student = studentMapper.toEntity(studentDto);
         Student savedStudent = studentRepository.save(student);
+        log.info("Student Created Successfully : id={}",  studentDto.getId());
         return studentMapper.toDTO(savedStudent);
 
     }
@@ -96,8 +100,9 @@ public class StudentServiceImpl implements StudentService {
         existing.setName(studentDto.getName());
         existing.setAge(studentDto.getAge());
         existing.setEmail(studentDto.getEmail());
-        studentRepository.save(existing);
-        return studentMapper.toDTO(existing);
+        Student updatedStudent = studentRepository.save(existing);
+        log.info("Student updated successfully : id={} ,email={}", id , updatedStudent.getEmail());
+        return studentMapper.toDTO(updatedStudent);
     }
 
     @Override

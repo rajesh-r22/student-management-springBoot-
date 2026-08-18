@@ -1,1 +1,3 @@
-2026-08-17T23:42:36.545+05:30  INFO 3320 --- [student-api] [main] c.e.student_api.StudentApiApplication    : Starting StudentApiApplication using Java 23.0.2 with PID 3320 (C:\Users\itsme\Downloads\student-api\student-api\target\classes started by itsme in C:\Users\itsme\Downloads\student-api\student-api)
+2026-08-18T02:36:32.464+05:30  INFO 3320 --- [student-api] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-18T02:36:32.522+05:30  INFO 3320 --- [student-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-08-18T02:36:32.539+05:30  INFO 3320 --- [student-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

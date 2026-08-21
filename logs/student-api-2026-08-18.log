@@ -1,0 +1,3 @@
+2026-08-18T02:36:32.464+05:30  INFO 3320 --- [student-api] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-18T02:36:32.522+05:30  INFO 3320 --- [student-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-08-18T02:36:32.539+05:30  INFO 3320 --- [student-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

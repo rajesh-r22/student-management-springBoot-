@@ -1,4 +1,4 @@
 package com.example.student_api.entity;
 
-public class Book {
+public class Books {
 }

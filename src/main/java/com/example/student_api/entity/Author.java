@@ -1,10 +1,10 @@
 package com.example.student_api.entity;
 
-import com.example.student_api.dto.BooksDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +23,17 @@ public class Author {
     @Column(nullable = false, unique = true)
     private String email;
 
+    // INVERSE side — "mappedBy" says: "the Book entity's 'author' field owns this relationship"
+    // Author does NOT have a foreign key column — it just knows how to LOOK UP its books
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Books> books=new ArrayList<>();
+    private List<Book> books = new ArrayList<>();
+
+    // CRITICAL: @Data's generated toString()/equals()/hashCode() would recurse into books,
+    // and each Book's toString() would recurse back into author -> infinite loop -> StackOverflowError.
+    // We override manually to break the cycle:
+    @Override
+    public String toString() {
+        return "Author{id=" + id + ", name='" + name + "', email='" + email + "'}";
+    }
 
 }

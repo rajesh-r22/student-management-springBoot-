@@ -3,7 +3,7 @@ package com.example.student_api.dto;
 import lombok.Data;
 
 @Data
-public class BooksDto {
+public class BookDto {
     private Long  id;
     private String title;
     private String isbn;

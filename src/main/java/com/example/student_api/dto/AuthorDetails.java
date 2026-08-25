@@ -10,5 +10,5 @@ public class AuthorDetails {
     private Long id;
     private String name;
     private String email;
-    private List<BooksDto>  books; // BookDTO does NOT contain author back-reference -> recursion is structurally impossible
+    private List<BookDto>  books; // BookDTO does NOT contain author back-reference -> recursion is structurally impossible
 }

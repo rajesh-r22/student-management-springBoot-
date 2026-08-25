@@ -6,7 +6,7 @@ import java.util.List;
 
 // Used for SINGLE-author detail view — includes the nested books, ONE level deep only
 @Data
-public class AuthorDetails {
+public class AuthorDetailsDto {
     private Long id;
     private String name;
     private String email;

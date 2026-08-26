@@ -51,5 +51,18 @@ public class AuthorServiceImpl implements AuthorService {
         return bookMapper.toDto(saved);
     }
 
+    @Override
+    public void removeBookFromAuthor(Long authorId, Long bookId) {
+        Author author=authorRepository.findById(authorId)
+                .orElseThrow(() -> new ResourceNotFoundException("Author not found with id " + authorId));
+        Book book=author.getBooks().stream()
+                .filter(b->b.getId().equals(bookId))
+                .findFirst()
+                .orElseThrow(() -> new ResourceNotFoundException("Book not found with id " + authorId));
+        author.getBooks().remove(book);// orphanRemoval=true means this DELETEs the book row automatically
+        // no explicit bookRepository.delete() needed — cascade handles it on flush
+        log.info("Removed book {} with {} authors", book.getTitle(), author.getName());
+    }
+
 
 }

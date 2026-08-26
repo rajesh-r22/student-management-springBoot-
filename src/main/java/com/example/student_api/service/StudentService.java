@@ -3,7 +3,6 @@ package com.example.student_api.service;
 import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
 import com.example.student_api.dto.StudentRankDto;
-import com.example.student_api.dto.StudentRankProjection;
 
 import java.util.List;
 

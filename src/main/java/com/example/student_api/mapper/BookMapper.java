@@ -1,11 +1,13 @@
 package com.example.student_api.mapper;
 
 import com.example.student_api.dto.BookDto;
+import com.example.student_api.entity.Book;
 import org.mapstruct.Mapper;
 
-import java.awt.print.Book;
+
 
 @Mapper(componentModel = "string")
 public interface BookMapper {
-    BookDto toDto(Book book);
+    BookDto toDto( com.example.student_api.entity.Book book);
+    Book toEntity(BookDto bookDto);
 }

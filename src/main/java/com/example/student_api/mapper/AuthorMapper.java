@@ -10,7 +10,8 @@ import org.mapstruct.Mapping;
 public interface AuthorMapper {
     @Mapping(target = "bookCount",expression = "java(author.getBooks().size())")
     AuthorDto toDto(Author author);
+    Author toEntity(AuthorDto authorDto);
 
     AuthorDetailsDto toDetailsDto(Author author);// uses BookMapper automatically for the nested list, via `uses = BookMapper.class`
-
+    Author toEntity(AuthorDetailsDto authorDetailsDto);
 }

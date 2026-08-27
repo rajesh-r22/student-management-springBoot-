@@ -26,4 +26,10 @@ public class AuthorController {
         BookDto created=authorService.addBookToAuthor(id, bookDto);
         return new ResponseEntity<>(ApiResponse.success("Book added",created), HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/{authorId}/books/{bookId}")
+    public ResponseEntity<ApiResponse<Void>> deleteBook(@PathVariable Long authorId, @PathVariable Long bookId) {
+        authorService.removeBookFromAuthor(authorId, bookId);
+        return ResponseEntity.ok(ApiResponse.success("Book deleted",null));
+    }
 }

@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 
 
 
-@Mapper(componentModel = "string")
+@Mapper(componentModel = "spring")
 public interface BookMapper {
     BookDto toDto( com.example.student_api.entity.Book book);
     Book toEntity(BookDto bookDto);

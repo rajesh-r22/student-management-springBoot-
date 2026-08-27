@@ -7,6 +7,7 @@ import com.example.student_api.entity.Book;
 import com.example.student_api.exception.ResourceNotFoundException;
 import com.example.student_api.mapper.AuthorMapper;
 import com.example.student_api.mapper.BookMapper;
+import com.example.student_api.mapper.BookMapperImpl;
 import com.example.student_api.repository.AuthorRepository;
 import com.example.student_api.repository.BookRepository;
 import jakarta.transaction.Transactional;
@@ -45,9 +46,11 @@ public class AuthorServiceImpl implements AuthorService {
         book.setTitle(bookDto.getTitle());
         book.setIsbn(bookDto.getIsbn());
         book.setAuthor(author);
-        log.info("fetched book {} with {} books", book.getTitle(), book.getIsbn());
 
+        author.getBooks().add(book);
         Book saved=bookRepository.save(book);
+
+        log.info("fetched book {} with {} books", book.getTitle(), book.getIsbn());
         return bookMapper.toDto(saved);
     }
 

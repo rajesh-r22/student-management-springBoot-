@@ -1,0 +1,16 @@
+2026-08-30 23:14:04 [main] INFO  c.e.s.StudentApiApplicationTests [] - Starting StudentApiApplicationTests using Java 17.0.12 with PID 436 (started by itsme in C:\Users\itsme\Downloads\student-api\student-api)
+2026-08-30 23:14:04 [main] INFO  c.e.s.StudentApiApplicationTests [] - No active profile set, falling back to 1 default profile: "default"
+2026-08-30 23:14:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-30 23:14:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [] - Finished Spring Data repository scanning in 93 ms. Found 3 JPA repository interfaces.
+2026-08-30 23:14:07 [main] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Starting...
+2026-08-30 23:14:07 [main] INFO  com.zaxxer.hikari.pool.HikariPool [] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@bf2aa32
+2026-08-30 23:14:07 [main] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Start completed.
+2026-08-30 23:14:07 [main] WARN  org.hibernate.orm.deprecation [] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-30 23:14:08 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo [] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-30 23:14:09 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-30 23:14:10 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory [] - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-30 23:14:11 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-30 23:14:12 [main] INFO  c.e.s.StudentApiApplicationTests [] - Started StudentApiApplicationTests in 8.194 seconds (process running for 9.513)
+2026-08-30 23:14:12 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-30 23:14:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Shutdown initiated...
+2026-08-30 23:14:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Shutdown completed.

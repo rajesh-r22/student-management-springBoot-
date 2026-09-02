@@ -1,4 +1,4 @@
-package com.example.student_api.controller;
+package com.example.student_api.student.controller;
 
 import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
@@ -67,7 +67,7 @@ public class StudentController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponse<StudentDto>> updateStudentById(
-             @PathVariable Long id,@Validated(ValidationGroup.onUpdate.class) @RequestBody StudentDto studentDto) {
+            @PathVariable Long id,@Validated(ValidationGroup.onUpdate.class) @RequestBody StudentDto studentDto) {
         StudentDto updated= studentService.updateStudentById(id, studentDto);
         ApiResponse<StudentDto> response=ApiResponse.success("Student updated successfully",updated);
         return new ResponseEntity<>(response, HttpStatus.OK);
@@ -86,7 +86,7 @@ public class StudentController {
 
     @PutMapping("/{id}/incrementAge")
     public ResponseEntity<StudentDto> incrementAge(@PathVariable Long id){
-         return ResponseEntity.ok(studentService.IncrementAge(id));
+        return ResponseEntity.ok(studentService.IncrementAge(id));
     }
 
     @GetMapping("/emailNotification")
@@ -95,3 +95,4 @@ public class StudentController {
     }
 
 }
+

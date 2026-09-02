@@ -1,4 +1,4 @@
-package com.example.student_api.entity;
+package com.example.student_api.student.entity;
 
 import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
@@ -40,3 +40,4 @@ public class Student {
     @Type(JsonType.class)
     private String preferences; // stored as JSON string, PostgreSQL validates/indexes it as JSONB
 }
+

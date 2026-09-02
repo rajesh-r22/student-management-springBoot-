@@ -3,12 +3,13 @@ package com.example.student_api.service;
 import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
 import com.example.student_api.dto.StudentRankDto;
-import com.example.student_api.entity.Student;
+
 import com.example.student_api.exception.DuplicateResourceException;
 import com.example.student_api.exception.InvalidRequestException;
 import com.example.student_api.exception.ResourceNotFoundException;
 import com.example.student_api.mapper.StudentMapper;
 import com.example.student_api.repository.StudentRepository;
+import com.example.student_api.student.entity.Student;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

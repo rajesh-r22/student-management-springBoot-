@@ -1,4 +1,4 @@
-package com.example.student_api.repository;
+package com.example.student_api.student.repository;
 
 import com.example.student_api.dto.StudentRankProjection;
 
@@ -48,7 +48,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     @Query("SELECT s.name FROM Student s WHERE s.age > :age")
     List<String> findNamesOfStudentsOlderThan(@Param("age") Integer age);
 
-//    ----NATIVE QUERY--
+    //    ----NATIVE QUERY--
     @Query(value = """
             SELECT s.id AS id, s.name AS name, s.age AS age,
             RANK() OVER (ORDER BY s.age DESC) AS age_rank

@@ -4,7 +4,7 @@ import com.example.student_api.dto.PagedResponse;
 import com.example.student_api.dto.StudentDto;
 import com.example.student_api.dto.StudentRankDto;
 import com.example.student_api.response.ApiResponse;
-import com.example.student_api.service.StudentService;
+import com.example.student_api.student.service.StudentService;
 import com.example.student_api.validation.ValidationGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

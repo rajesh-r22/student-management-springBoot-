@@ -1,5 +1,6 @@
-package com.example.student_api.dto;
+package com.example.student_api.student.dto;
 
+import com.example.student_api.dto.AddressDto;
 import com.example.student_api.validation.ValidRollNumber;
 import com.example.student_api.validation.ValidationGroup;
 import jakarta.validation.Valid;

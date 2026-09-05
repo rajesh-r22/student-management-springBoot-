@@ -1,12 +1,12 @@
 package com.example.student_api.student.service;
 
 import com.example.student_api.dto.PagedResponse;
-import com.example.student_api.dto.StudentDto;
-import com.example.student_api.dto.StudentRankDto;
 import com.example.student_api.exception.DuplicateResourceException;
 import com.example.student_api.exception.InvalidRequestException;
 import com.example.student_api.exception.ResourceNotFoundException;
 import com.example.student_api.mapper.StudentMapper;
+import com.example.student_api.student.dto.StudentDto;
+import com.example.student_api.student.dto.StudentRankDto;
 import com.example.student_api.student.entity.Student;
 import com.example.student_api.student.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
@@ -60,7 +60,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public StudentDto getStudentById(Long id) {
+    public  StudentDto getStudentById(Long id) {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Student not found with id "+id));
         return studentMapper.toDTO(student);

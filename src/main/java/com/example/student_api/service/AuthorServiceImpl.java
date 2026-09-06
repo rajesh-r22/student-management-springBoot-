@@ -1,15 +1,14 @@
 package com.example.student_api.service;
 
-import com.example.student_api.dto.AuthorDetailsDto;
-import com.example.student_api.dto.BookDto;
-import com.example.student_api.entity.Author;
-import com.example.student_api.entity.Book;
+import com.example.student_api.library.dto.AuthorDetailsDto;
+import com.example.student_api.library.dto.BookDto;
+import com.example.student_api.library.entity.Author;
+import com.example.student_api.library.entity.Book;
 import com.example.student_api.exception.ResourceNotFoundException;
 import com.example.student_api.mapper.AuthorMapper;
 import com.example.student_api.mapper.BookMapper;
-import com.example.student_api.mapper.BookMapperImpl;
-import com.example.student_api.repository.AuthorRepository;
-import com.example.student_api.repository.BookRepository;
+import com.example.student_api.library.repository.AuthorRepository;
+import com.example.student_api.library.repository.BookRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;

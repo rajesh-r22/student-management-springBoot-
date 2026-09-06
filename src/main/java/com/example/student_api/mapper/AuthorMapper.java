@@ -1,8 +1,8 @@
 package com.example.student_api.mapper;
 
-import com.example.student_api.dto.AuthorDetailsDto;
-import com.example.student_api.dto.AuthorDto;
-import com.example.student_api.entity.Author;
+import com.example.student_api.library.dto.AuthorDetailsDto;
+import com.example.student_api.library.dto.AuthorDto;
+import com.example.student_api.library.entity.Author;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

@@ -1,7 +1,7 @@
 package com.example.student_api.service;
 
-import com.example.student_api.dto.AuthorDetailsDto;
-import com.example.student_api.dto.BookDto;
+import com.example.student_api.library.dto.AuthorDetailsDto;
+import com.example.student_api.library.dto.BookDto;
 
 public interface AuthorService {
     AuthorDetailsDto getAuthorWithBooks(Long authorId);

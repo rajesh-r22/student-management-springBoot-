@@ -1,6 +1,6 @@
 package com.example.student_api.student.service;
 
-import com.example.student_api.dto.PagedResponse;
+import com.example.student_api.student.dto.PagedResponse;
 import com.example.student_api.exception.DuplicateResourceException;
 import com.example.student_api.exception.InvalidRequestException;
 import com.example.student_api.exception.ResourceNotFoundException;

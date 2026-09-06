@@ -1,6 +1,6 @@
 package com.example.student_api.student.controller;
 
-import com.example.student_api.dto.PagedResponse;
+import com.example.student_api.student.dto.PagedResponse;
 import com.example.student_api.response.ApiResponse;
 import com.example.student_api.student.dto.StudentDto;
 import com.example.student_api.student.dto.StudentRankDto;

@@ -1,7 +1,7 @@
-package com.example.student_api.controller;
+package com.example.student_api.library.controller;
 
-import com.example.student_api.dto.AuthorDetailsDto;
-import com.example.student_api.dto.BookDto;
+import com.example.student_api.library.dto.AuthorDetailsDto;
+import com.example.student_api.library.dto.BookDto;
 import com.example.student_api.response.ApiResponse;
 import com.example.student_api.service.AuthorService;
 import jakarta.validation.Valid;

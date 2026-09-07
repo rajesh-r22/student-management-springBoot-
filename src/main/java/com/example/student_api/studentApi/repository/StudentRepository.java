@@ -1,7 +1,7 @@
-package com.example.student_api.student.repository;
+package com.example.student_api.studentApi.repository;
 
-import com.example.student_api.student.dto.StudentRankProjection;
-import com.example.student_api.student.entity.Student;
+import com.example.student_api.studentApi.dto.StudentRankProjection;
+import com.example.student_api.studentApi.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

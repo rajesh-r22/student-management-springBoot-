@@ -1,7 +1,7 @@
 package com.example.student_api.mapper;
 
-import com.example.student_api.library.dto.BookDto;
-import com.example.student_api.library.entity.Book;
+import com.example.student_api.libraryApi.dto.BookDto;
+import com.example.student_api.libraryApi.entity.Book;
 import org.mapstruct.Mapper;
 
 

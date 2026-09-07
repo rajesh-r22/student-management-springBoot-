@@ -1,4 +1,4 @@
-package com.example.student_api.library.dto;
+package com.example.student_api.libraryApi.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

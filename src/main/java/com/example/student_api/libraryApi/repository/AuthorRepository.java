@@ -1,6 +1,6 @@
-package com.example.student_api.library.repository;
+package com.example.student_api.libraryApi.repository;
 
-import com.example.student_api.library.entity.Author;
+import com.example.student_api.libraryApi.entity.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AuthorRepository extends JpaRepository<Author,Long> {

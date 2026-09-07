@@ -1,4 +1,4 @@
-package com.example.student_api.student.dto;
+package com.example.student_api.studentApi.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

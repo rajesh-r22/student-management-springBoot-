@@ -1,14 +1,14 @@
-package com.example.student_api.student.service;
+package com.example.student_api.studentApi.service;
 
-import com.example.student_api.student.dto.PagedResponse;
+import com.example.student_api.studentApi.dto.PagedResponse;
 import com.example.student_api.exception.DuplicateResourceException;
 import com.example.student_api.exception.InvalidRequestException;
 import com.example.student_api.exception.ResourceNotFoundException;
 import com.example.student_api.mapper.StudentMapper;
-import com.example.student_api.student.dto.StudentDto;
-import com.example.student_api.student.dto.StudentRankDto;
-import com.example.student_api.student.entity.Student;
-import com.example.student_api.student.repository.StudentRepository;
+import com.example.student_api.studentApi.dto.StudentDto;
+import com.example.student_api.studentApi.dto.StudentRankDto;
+import com.example.student_api.studentApi.entity.Student;
+import com.example.student_api.studentApi.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

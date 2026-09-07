@@ -1,4 +1,4 @@
-package com.example.student_api.student.entity;
+package com.example.student_api.studentApi.entity;
 
 import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;

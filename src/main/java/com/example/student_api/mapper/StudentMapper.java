@@ -1,7 +1,7 @@
 package com.example.student_api.mapper;
 
-import com.example.student_api.student.dto.StudentDto;
-import com.example.student_api.student.entity.Student;
+import com.example.student_api.studentApi.dto.StudentDto;
+import com.example.student_api.studentApi.entity.Student;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

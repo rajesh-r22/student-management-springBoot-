@@ -1,10 +1,10 @@
-package com.example.student_api.student.controller;
+package com.example.student_api.studentApi.controller;
 
-import com.example.student_api.student.dto.PagedResponse;
+import com.example.student_api.studentApi.dto.PagedResponse;
 import com.example.student_api.response.ApiResponse;
-import com.example.student_api.student.dto.StudentDto;
-import com.example.student_api.student.dto.StudentRankDto;
-import com.example.student_api.student.service.StudentService;
+import com.example.student_api.studentApi.dto.StudentDto;
+import com.example.student_api.studentApi.dto.StudentRankDto;
+import com.example.student_api.studentApi.service.StudentService;
 import com.example.student_api.validation.ValidationGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

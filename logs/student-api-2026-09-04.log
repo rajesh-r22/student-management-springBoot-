@@ -41,7 +41,7 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
 	at com.example.student_api.StudentApiApplication.main(StudentApiApplication.java:10)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.student.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.studentApi.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -69,7 +69,7 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
 	at com.example.student_api.StudentApiApplication.main(StudentApiApplication.java:10)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.student.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.studentApi.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -97,7 +97,7 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
 	at com.example.student_api.StudentApiApplication.main(StudentApiApplication.java:10)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.student.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.studentApi.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -125,7 +125,7 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
 	at com.example.student_api.StudentApiApplication.main(StudentApiApplication.java:10)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.student.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.studentApi.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -153,7 +153,7 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
 	at com.example.student_api.StudentApiApplication.main(StudentApiApplication.java:10)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.student.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.studentApi.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -181,7 +181,7 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
 	at com.example.student_api.StudentApiApplication.main(StudentApiApplication.java:10)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.student.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.studentApi.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -209,7 +209,7 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
 	at com.example.student_api.StudentApiApplication.main(StudentApiApplication.java:10)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.student.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'studentMapperImpl' for bean class [com.example.student_api.studentApi.mapper.StudentMapperImpl] conflicts with existing, non-compatible bean definition of same name and class [com.example.student_api.mapper.StudentMapperImpl]
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)

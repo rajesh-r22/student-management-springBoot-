@@ -45,7 +45,7 @@
        references authors
 2026-08-26 22:49:15 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [] - Initialized JPA EntityManagerFactory for persistence unit 'default'
 2026-08-26 22:49:15 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory [] - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-08-26 22:49:16 [main] WARN  o.s.w.c.s.GenericWebApplicationContext [] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorMapperImpl': Unsatisfied dependency expressed through field 'bookMapper': No qualifying bean of type 'com.example.student_api.mapper.BookMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2026-08-26 22:49:16 [main] WARN  o.s.w.c.s.GenericWebApplicationContext [] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorMapperImpl': Unsatisfied dependency expressed through field 'bookMapper': No qualifying bean of type 'com.example.student_api.libraryApi.mapper.BookMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 2026-08-26 22:49:16 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [] - Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-08-26 22:49:16 [main] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Shutdown initiated...
 2026-08-26 22:49:16 [main] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Shutdown completed.
@@ -60,7 +60,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field bookMapper in com.example.student_api.mapper.AuthorMapperImpl required a bean of type 'com.example.student_api.mapper.BookMapper' that could not be found.
+Field bookMapper in com.example.student_api.mapper.AuthorMapperImpl required a bean of type 'com.example.student_api.libraryApi.mapper.BookMapper' that could not be found.
 
 The injection point has the following annotations:
 	- @org.springframework.beans.factory.annotation.Autowired(required=true)
@@ -68,7 +68,7 @@ The injection point has the following annotations:
 
 Action:
 
-Consider defining a bean of type 'com.example.student_api.mapper.BookMapper' in your configuration.
+Consider defining a bean of type 'com.example.student_api.libraryApi.mapper.BookMapper' in your configuration.
 
 2026-08-26 22:49:16 [main] WARN  o.s.test.context.TestContextManager [] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.example.student_api.StudentApiApplicationTests@a6f34f5]
 java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@6970687e testClass = com.example.student_api.StudentApiApplicationTests, locations = [], classes = [com.example.student_api.StudentApiApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@782859e, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6f43c82, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7fb4f2a9, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@6f36c2f0, org.springframework.boot.test.context.SpringBootTestAnnotation@6d538b3c], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
@@ -146,7 +146,7 @@ java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMerge
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorMapperImpl': Unsatisfied dependency expressed through field 'bookMapper': No qualifying bean of type 'com.example.student_api.mapper.BookMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorMapperImpl': Unsatisfied dependency expressed through field 'bookMapper': No qualifying bean of type 'com.example.student_api.libraryApi.mapper.BookMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
@@ -174,7 +174,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
 	... 73 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.example.student_api.mapper.BookMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.example.student_api.libraryApi.mapper.BookMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1880)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1406)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)

@@ -1,8 +1,8 @@
 package com.example.student_api.studentApi.dto;
 
 import com.example.student_api.libraryApi.dto.AddressDto;
-import com.example.student_api.validation.ValidRollNumber;
-import com.example.student_api.validation.ValidationGroup;
+import com.example.student_api.common.validation.ValidRollNumber;
+import com.example.student_api.common.validation.ValidationGroup;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.Data;

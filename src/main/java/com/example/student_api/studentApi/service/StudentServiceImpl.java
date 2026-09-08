@@ -1,10 +1,10 @@
 package com.example.student_api.studentApi.service;
 
 import com.example.student_api.studentApi.dto.PagedResponse;
-import com.example.student_api.exception.DuplicateResourceException;
-import com.example.student_api.exception.InvalidRequestException;
-import com.example.student_api.exception.ResourceNotFoundException;
-import com.example.student_api.mapper.StudentMapper;
+import com.example.student_api.common.exception.DuplicateResourceException;
+import com.example.student_api.common.exception.InvalidRequestException;
+import com.example.student_api.common.exception.ResourceNotFoundException;
+import com.example.student_api.studentApi.mapper.StudentMapper;
 import com.example.student_api.studentApi.dto.StudentDto;
 import com.example.student_api.studentApi.dto.StudentRankDto;
 import com.example.student_api.studentApi.entity.Student;

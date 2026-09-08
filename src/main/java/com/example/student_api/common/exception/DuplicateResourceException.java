@@ -1,4 +1,4 @@
-package com.example.student_api.exception;
+package com.example.student_api.common.exception;
 
 public class DuplicateResourceException extends ApplicationException {
 

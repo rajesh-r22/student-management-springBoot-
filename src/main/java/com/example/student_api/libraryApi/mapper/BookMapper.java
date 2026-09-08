@@ -1,4 +1,4 @@
-package com.example.student_api.mapper;
+package com.example.student_api.libraryApi.mapper;
 
 import com.example.student_api.libraryApi.dto.BookDto;
 import com.example.student_api.libraryApi.entity.Book;

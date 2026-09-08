@@ -1,4 +1,4 @@
-package com.example.student_api.validation;
+package com.example.student_api.common.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

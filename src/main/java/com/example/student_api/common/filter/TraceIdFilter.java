@@ -1,4 +1,4 @@
-package com.example.student_api.filter;
+package com.example.student_api.common.filter;
 
 import jakarta.servlet.*;
 import org.slf4j.MDC;

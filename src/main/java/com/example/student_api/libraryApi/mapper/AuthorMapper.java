@@ -1,4 +1,4 @@
-package com.example.student_api.mapper;
+package com.example.student_api.libraryApi.mapper;
 
 import com.example.student_api.libraryApi.dto.AuthorDetailsDto;
 import com.example.student_api.libraryApi.dto.AuthorDto;
@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.stereotype.Component;
 
-@Mapper(componentModel = "spring", uses=BookMapper.class)
+@Mapper(componentModel = "spring", uses= BookMapper.class)
 @Component("authorMapper")
 public interface AuthorMapper {
     @Mapping(target = "bookCount",expression = "java(author.getBooks().size())")

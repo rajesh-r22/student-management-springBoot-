@@ -4,9 +4,11 @@ import com.example.student_api.studentApi.dto.StudentDto;
 import com.example.student_api.studentApi.entity.Student;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.springframework.stereotype.Component;
 
 
 @Mapper(componentModel = "spring")   // generates a Spring @Component implementation automatically
+@Component("studentMapper")
 public interface StudentMapper {
 
     StudentDto toDTO(Student student);   // MapStruct matches passwordHash/createdAt/createdBy are simply absent on DTO — auto-ignored

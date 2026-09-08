@@ -1,17 +1,56 @@
-2026-09-07 12:16:02 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool [] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15h32m33s722ms384µs300ns).
-2026-09-07 19:38:47 [main] INFO  c.e.s.StudentApiApplicationTests [] - Starting StudentApiApplicationTests using Java 17.0.12 with PID 27516 (started by itsme in C:\Users\itsme\Downloads\student-api\student-api)
-2026-09-07 19:38:47 [main] INFO  c.e.s.StudentApiApplicationTests [] - No active profile set, falling back to 1 default profile: "default"
-2026-09-07 19:38:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-09-07 19:38:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [] - Finished Spring Data repository scanning in 114 ms. Found 3 JPA repository interfaces.
-2026-09-07 19:38:51 [main] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Starting...
-2026-09-07 19:38:51 [main] INFO  com.zaxxer.hikari.pool.HikariPool [] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7cb29ea8
-2026-09-07 19:38:51 [main] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Start completed.
-2026-09-07 19:38:51 [main] WARN  org.hibernate.orm.deprecation [] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-09-07 19:38:52 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo [] - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-09-07 19:38:54 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [] - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-09-07 19:38:55 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory [] - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-09-07 19:38:57 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-09-07 19:38:58 [main] INFO  c.e.s.StudentApiApplicationTests [] - Started StudentApiApplicationTests in 11.059 seconds (process running for 12.727)
-2026-09-07 19:38:59 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [] - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-09-07 19:38:59 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Shutdown initiated...
-2026-09-07 19:38:59 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Shutdown completed.
+2026-09-08 22:28:25 [main] INFO  c.e.s.StudentApiApplicationTests [] - Starting StudentApiApplicationTests using Java 17.0.12 with PID 33404 (started by itsme in C:\Users\itsme\Downloads\student-api\student-api)
+2026-09-08 22:28:25 [main] INFO  c.e.s.StudentApiApplicationTests [] - No active profile set, falling back to 1 default profile: "default"
+2026-09-08 22:28:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-08 22:28:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [] - Finished Spring Data repository scanning in 95 ms. Found 3 JPA repository interfaces.
+2026-09-08 22:28:28 [main] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Starting...
+2026-09-08 22:28:28 [main] INFO  com.zaxxer.hikari.pool.HikariPool [] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2b2a4332
+2026-09-08 22:28:28 [main] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Start completed.
+2026-09-08 22:28:28 [main] WARN  org.hibernate.orm.deprecation [] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-08 22:28:28 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo [] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-08 22:28:30 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 22:28:30 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory [] - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-08 22:28:32 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-08 22:28:33 [main] INFO  c.e.s.StudentApiApplicationTests [] - Started StudentApiApplicationTests in 7.96 seconds (process running for 9.195)
+2026-09-08 22:28:33 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 22:28:33 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Shutdown initiated...
+2026-09-08 22:28:33 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Shutdown completed.
+2026-09-08 22:29:16 [main] INFO  c.e.s.StudentApiApplication [] - Starting StudentApiApplication using Java 23.0.2 with PID 20168 (C:\Users\itsme\Downloads\student-api\student-api\target\classes started by itsme in C:\Users\itsme\Downloads\student-api\student-api)
+2026-09-08 22:29:16 [main] INFO  c.e.s.StudentApiApplication [] - No active profile set, falling back to 1 default profile: "default"
+2026-09-08 22:29:17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-08 22:29:17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [] - Finished Spring Data repository scanning in 64 ms. Found 3 JPA repository interfaces.
+2026-09-08 22:29:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [] - Tomcat initialized with port 8080 (http)
+2026-09-08 22:29:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol [] - Initializing ProtocolHandler ["http-nio-8080"]
+2026-09-08 22:29:18 [main] INFO  o.a.catalina.core.StandardService [] - Starting service [Tomcat]
+2026-09-08 22:29:18 [main] INFO  o.a.catalina.core.StandardEngine [] - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-09-08 22:29:18 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [] - Initializing Spring embedded WebApplicationContext
+2026-09-08 22:29:18 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [] - Root WebApplicationContext: initialization completed in 1374 ms
+2026-09-08 22:29:18 [main] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Starting...
+2026-09-08 22:29:19 [main] INFO  com.zaxxer.hikari.pool.HikariPool [] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@652e345
+2026-09-08 22:29:19 [main] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Start completed.
+2026-09-08 22:29:19 [main] WARN  org.hibernate.orm.deprecation [] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-08 22:29:19 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo [] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-08 22:29:20 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 22:29:20 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory [] - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-08 22:29:21 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-08 22:29:21 [main] INFO  o.a.coyote.http11.Http11NioProtocol [] - Starting ProtocolHandler ["http-nio-8080"]
+2026-09-08 22:29:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [] - Tomcat started on port 8080 (http) with context path ''
+2026-09-08 22:29:21 [main] INFO  c.e.s.StudentApiApplication [] - Started StudentApiApplication in 5.568 seconds (process running for 8.13)
+2026-09-08 22:42:00 [main] INFO  c.e.s.StudentApiApplicationTests [] - Starting StudentApiApplicationTests using Java 17.0.12 with PID 31496 (started by itsme in C:\Users\itsme\Downloads\student-api\student-api)
+2026-09-08 22:42:00 [main] INFO  c.e.s.StudentApiApplicationTests [] - No active profile set, falling back to 1 default profile: "default"
+2026-09-08 22:42:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-08 22:42:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [] - Finished Spring Data repository scanning in 95 ms. Found 3 JPA repository interfaces.
+2026-09-08 22:42:02 [main] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Starting...
+2026-09-08 22:42:02 [main] INFO  com.zaxxer.hikari.pool.HikariPool [] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4d0e1a9a
+2026-09-08 22:42:02 [main] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Start completed.
+2026-09-08 22:42:02 [main] WARN  org.hibernate.orm.deprecation [] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-08 22:42:03 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo [] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-08 22:42:04 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 22:42:05 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory [] - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-08 22:42:06 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-08 22:42:07 [main] INFO  c.e.s.StudentApiApplicationTests [] - Started StudentApiApplicationTests in 8.058 seconds (process running for 9.259)
+2026-09-08 22:42:08 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 22:42:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Shutdown initiated...
+2026-09-08 22:42:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Shutdown completed.
+2026-09-08 22:42:31 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-08 22:42:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Shutdown initiated...
+2026-09-08 22:42:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [] - HikariPool-1 - Shutdown completed.

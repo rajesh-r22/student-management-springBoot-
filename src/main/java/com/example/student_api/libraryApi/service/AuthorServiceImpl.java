@@ -1,4 +1,4 @@
-package com.example.student_api.service;
+package com.example.student_api.libraryApi.service;
 
 import com.example.student_api.libraryApi.dto.AuthorDetailsDto;
 import com.example.student_api.libraryApi.dto.BookDto;

@@ -3,7 +3,7 @@ package com.example.student_api.libraryApi.controller;
 import com.example.student_api.libraryApi.dto.AuthorDetailsDto;
 import com.example.student_api.libraryApi.dto.BookDto;
 import com.example.student_api.response.ApiResponse;
-import com.example.student_api.service.AuthorService;
+import com.example.student_api.libraryApi.service.AuthorService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

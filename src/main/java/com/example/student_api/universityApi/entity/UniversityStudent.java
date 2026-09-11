@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Table(name="uni_student")
 @Data
 @NoArgsConstructor
-public class Student {
+public class UniversityStudent {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +21,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{id=" + id + ", name='" + name + "'}"; // avoid recursion once Enrollment is added below
+        return "UniversityStudent{id=" + id + ", name='" + name + "'}"; // avoid recursion once Enrollment is added below
     }
 }

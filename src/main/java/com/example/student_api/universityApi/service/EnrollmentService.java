@@ -1,4 +1,4 @@
-package com.example.student_api.universityApi;
+package com.example.student_api.universityApi.service;
 
 import com.example.student_api.universityApi.dto.EnrollmentDto;
 

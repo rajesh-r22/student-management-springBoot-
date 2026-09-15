@@ -52,4 +52,13 @@ public class EnrollmentServiceImpl implements EnrollmentService {
         return enrollmentMapper.toDto(saved);
     }
 
+    @Override
+    public void unenrollStudent(Long studentId, Long courseId) {
+        Enrollment enrollment=enrollmentRepository.findByUniversityStudentIdAndCourseId(studentId,courseId)
+                .orElseThrow(()-> new ResourceNotFoundException("Enrollment Not Found"+ studentId));
+        enrollmentRepository.delete(enrollment);
+        log.info("Unenrolled Student {} from Course {}", studentId, courseId);
+    }
+
+
 }

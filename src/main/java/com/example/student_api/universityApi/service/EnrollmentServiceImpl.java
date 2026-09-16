@@ -17,6 +17,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -58,6 +60,18 @@ public class EnrollmentServiceImpl implements EnrollmentService {
                 .orElseThrow(()-> new ResourceNotFoundException("Enrollment Not Found"+ studentId));
         enrollmentRepository.delete(enrollment);
         log.info("Unenrolled Student {} from Course {}", studentId, courseId);
+    }
+
+    @Override
+    public List<EnrollmentDto> getEnrollmentsForStudents(Long studentId){
+         if(!universityStudentRepository.existsById(studentId)) {
+             throw new ResourceNotFoundException("Student Not Found"+ studentId);
+         }
+
+        return  enrollmentRepository.findByUniversityStudentId(studentId)
+                .stream()
+                .map(enrollmentMapper::toDto)
+                .collect(Collectors.toList());
     }
 
 

@@ -43,6 +43,7 @@ public class EnrollmentServiceImpl implements EnrollmentService {
         if(enrollmentRepository.existsByUniversityStudentIdAndCourseId(studentId, courseId)) {
             throw new DuplicateResourceException("Enrollment Already Exists");
         }
+
         Enrollment enrollment=new Enrollment();
         enrollment.setUniversityStudent(student);
         enrollment.setCourse(course);
@@ -55,6 +56,7 @@ public class EnrollmentServiceImpl implements EnrollmentService {
     }
 
     @Override
+    @Transactional
     public void unenrollStudent(Long studentId, Long courseId) {
         Enrollment enrollment=enrollmentRepository.findByUniversityStudentIdAndCourseId(studentId,courseId)
                 .orElseThrow(()-> new ResourceNotFoundException("Enrollment Not Found"+ studentId));

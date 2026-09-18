@@ -19,5 +19,12 @@ public class User {
     @Column(unique = true, nullable = false)
     private String email;
 
+    // INVERSE side — mappedBy points to the field on Profile that owns the FK
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private Profile profile;
 
+    @Override
+    public String toString(){
+        return "User{id=" + id + ", username='" + username + "'}"; // break recursion
+    }
 }

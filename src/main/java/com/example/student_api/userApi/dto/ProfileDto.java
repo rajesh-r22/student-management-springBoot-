@@ -7,4 +7,5 @@ public class ProfileDto {
     private Long id;
     private String bio;
     private String phoneNumber;
+    // no "user" field — avoids recursion, same principle as Q11/Q12
 }
